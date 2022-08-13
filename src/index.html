@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Where to catch you</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        const myLatLng = { lat: 32.731944, lng: -117.149677 };
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 32.731944, lng: -117.149677},
+          zoom: 8,
+          mapId: '6e7fe5dedcfd2cc'
+        });
+        new google.maps.Marker({
+          position: myLatLng,
+          map,
+          title: "Hello World!",
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3AzwS5rXDm3vcid4d1-Up_ujFlkOQaC4&callback=initMap"
+    async defer></script>
+  </body>
+</html>
